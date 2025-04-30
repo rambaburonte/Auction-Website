@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Package stage
-FROM openjdk:17-jre-slim
+FROM openjdk:17-slim
 WORKDIR /app
 COPY --from=build /app/target/auction12-0.0.1-SNAPSHOT.jar /app/auction12-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
