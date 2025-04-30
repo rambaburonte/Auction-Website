@@ -78,7 +78,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchUpcomingAuctions = async () => {
       try {
-        const res = await axios.get<Auction[]>('http://localhost:8080/auction/upcomingAuctions');
+        const res = await axios.get<Auction[]>('http://biding-production.up.railway.app/auction/upcomingAuctions');
         console.log(res.data); // You might want to check the data here
         console.log("upcoming Connection Data|"+res.data); // You might want to check the data here
         setNewauctions(res.data); // Set the auctions data
